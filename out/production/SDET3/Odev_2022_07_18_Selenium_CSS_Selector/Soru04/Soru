@@ -1,0 +1,17 @@
+4-
+Bu websitesine gidiniz.  [https://testpages.herokuapp.com/styled/index.html]
+
+Calculate'e tıklayınız.
+
+         İlk input'a herhangi bir sayı giriniz.
+
+         İkinci input'a herhangi bir sayı giriniz.
+
+Calculate button'una tıklayınız.
+
+Sonucu alınız.
+
+Sonucu yazdırınız.
+
+Buradaki ödevler de elemanların LOCATOR larını bulurken, elemanın kendisindeki id veya name'i kullanmadan
+(diğerlerindekini kullanabilirsiz bu eleman uşalmak için) ve sadece CSS Selector ile bularak çözünüz.
