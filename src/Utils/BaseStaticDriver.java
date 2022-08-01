@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,9 +30,9 @@ public class BaseStaticDriver {
         driver.manage().window().maximize(); // maximize
         driver.manage().deleteAllCookies();
 
-        wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // sadece ana sayfa yüklenirken en başta
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // bütün webElement için geçerli
+        wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // sadece ana sayfa yüklenirken en başta
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // bütün webElement için geçerli
         // defaultta hiç bekleme yok, onun için pagetimeout implicitly wait'i basestaticdriver'da açmak lazım
         // pageloadtimeout açık olduğu için ilk elemanı bulabiliyor; ancak ikinci elemanı bulmak için ise
         // implicitly wait tanımlamak gerekiyor; bu tüm elemanlar için geçerli
@@ -63,5 +65,9 @@ public class BaseStaticDriver {
         } catch (Exception ignored) {
 
         }
+    }
+    public static String SSDateTimeFileName() {
+        LocalDateTime ssDateTime= LocalDateTime.parse(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        return "SS-".concat(ssDateTime.toString().replaceAll(":","_").substring(0,16).concat(".png"));
     }
 }
