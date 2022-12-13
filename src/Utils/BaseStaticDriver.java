@@ -30,9 +30,9 @@ public class BaseStaticDriver {
         driver.manage().window().maximize(); // maximize
         driver.manage().deleteAllCookies();
 
-        wait=new WebDriverWait(driver, Duration.ofSeconds(20));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // sadece ana sayfa yüklenirken en başta
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // bütün webElement için geçerli
+        wait=new WebDriverWait(driver, Duration.ofSeconds(60));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60)); // sadece ana sayfa yüklenirken en başta
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60)); // bütün webElement için geçerli
         // defaultta hiç bekleme yok, onun için pagetimeout implicitly wait'i basestaticdriver'da açmak lazım
         // pageloadtimeout açık olduğu için ilk elemanı bulabiliyor; ancak ikinci elemanı bulmak için ise
         // implicitly wait tanımlamak gerekiyor; bu tüm elemanlar için geçerli
